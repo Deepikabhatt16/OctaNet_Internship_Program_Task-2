@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do_List</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+
+<body>
+    <h1>TO_DO_APP</h1>
+    <div class="container">
+        <div class="main">
+            <ul>
+                <li>Task:</li>
+                <li class="Catagory">Catagory:</li>
+                <li>Start Date:</li>
+                <li class="end">End Date:</li>
+
+            </ul>
+        </div>
+        <div class="inform">
+            <form action="/submit" method="post">
+                <ul>
+                    <input type="text" name="task" placeholder="write the activity" id="first">
+                    <select type="select" name="type" class="selectType">
+                        <option value="" data-display="Select">select your type</option>
+                        <option value="personal">personal</option>
+                        <option value="educational">educational</option>
+                        <option value="creative">creative</option>
+                        <option value="relaxation">relaxation</option>
+                        <option value="professional">professional</option>
+                        <option value="social">Social</option>
+                    </select>
+                    <input type="date" name="start" placeholder="dd/mm/yy" required>
+                    <input type="date" name="end" placeholder="dd/mm/yy" required>
+                    <input type="submit" value="ADD" formaction="/submit">
+                </ul>
+          
+        </div>
+        <div class="taskList" id="id">
+           
+
+         <div class="content" >     
+            <% if(locals.work){ %>
+                    <%for(i=0;i<work.length;i++){ %>
+                         <%=work[i]%>  
+                         <br>  
+                  <% }%>
+                  <% } %>
+                </div>  
+                
+                <div class="content" >     <% if(locals.related){ %>
+                    <%for(i=0;i<related.length;i++){ %>
+                         <%=related[i]%> 
+                         <br> 
+                  <% }%>
+                  <% } %>
+                </div>  
+                
+                <div class="content">     <% if(locals.from){ %>
+                    <%for(i=0;i<from.length;i++){ %>
+                         <%=from[i]%> 
+                         <br>
+                  <% }%>
+                  <% } %>
+                </div>  
+                
+                <div class="content">     <% if(locals.to){ %>
+                    <%for(i=0;i<to.length;i++){ %>
+                         <%=to[i]%> 
+                         <br>   
+                  <% }%>
+                  <% } %>
+                </div>  
+             </form> 
+        </div>
+    </div>
+</body>
+
+</html>
